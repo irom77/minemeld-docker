@@ -9,8 +9,11 @@ MM_BUILD_PATH=/bd_build/services/minemeld
 dpkg-divert --local --rename --add /usr/sbin/service
 ln -sf /bin/true /usr/sbin/service
 
+## configure update to downlad from beta channel
+[ -f $MM_BUILD_PATH/minemeld-auto-update.conf ] && cp $MM_BUILD_PATH/minemeld-auto-update.conf /etc
+
 ## Install minemeld.
-$minimal_apt_get_install -y minemeld
+$minimal_apt_get_install -q -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confold minemeld
 mkdir /etc/service/minemeld
 cp $MM_BUILD_PATH/minemeld.runit /etc/service/minemeld/run
 
