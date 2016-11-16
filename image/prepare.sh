@@ -45,6 +45,7 @@ apt-get upgrade -y --no-install-recommends
 $minimal_apt_get_install wget
 wget -qO - https://minemeld-updates.panw.io/gpg.key | sudo apt-key add -
 add-apt-repository "deb http://minemeld-updates.panw.io/ubuntu trusty-minemeld main"
+add-apt-repository "deb http://minemeld-updates.panw.io/ubuntu trusty-minemeld-unstable main"
 apt-get update
 
 ## Fix locale.
