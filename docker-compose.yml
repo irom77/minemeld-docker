@@ -1,7 +1,7 @@
 version: '2'
 services:
     minemeld:
-        image: jtschichold/minemeld
+        image: jtschichold/minemeld:beta
         ports:
             - '8443:443'
             - '13514'
